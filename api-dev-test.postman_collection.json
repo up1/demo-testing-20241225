@@ -40,7 +40,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "https://515cb192-74ef-4e9e-9bc6-10556fef2ce8.mock.pstmn.io/products/1"
+				"url": "{{XXX}}/products/1"
 			},
 			"response": []
 		},
@@ -65,7 +65,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "https://515cb192-74ef-4e9e-9bc6-10556fef2ce8.mock.pstmn.io/products/2"
+				"url": "{{XXX}}/products/2"
 			},
 			"response": []
 		},
@@ -90,7 +90,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "https://515cb192-74ef-4e9e-9bc6-10556fef2ce8.mock.pstmn.io/products/3"
+				"url": "{{XXX}}/products/3"
 			},
 			"response": []
 		}
