@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "2459ab16-b325-458d-adc6-606f39d19110",
+		"name": "testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "1453931",
+		"_collection_link": "https://red-firefly-245852.postman.co/workspace/imc-testing~1d374a76-82f3-4853-864a-4221221d859d/collection/1453931-2459ab16-b325-458d-adc6-606f39d19110?action=share&source=collection_link&creator=1453931"
+	},
+	"item": [
+		{
+			"name": "https://jsonplaceholder.typicode.com/users/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validate JSON schema\", function () {",
+							"    pm.response.to.have.jsonSchema({",
+							"        type: \"object\",",
+							"        required: [\"id\", \"name\", \"username\", \"email\", \"address\", \"phone\", \"website\", \"company\"],",
+							"        properties: {",
+							"            id: { type: \"number\" },",
+							"            name: { type: \"string\" },",
+							"            username: { type: \"string\" },",
+							"            email: { type: \"string\", format: \"email\" },",
+							"            address: {",
+							"                type: \"object\",",
+							"                required: [\"street\", \"suite\", \"city\", \"zipcode\", \"geo\"],",
+							"                properties: {",
+							"                    street: { type: \"string\" },",
+							"                    suite: { type: \"string\" },",
+							"                    city: { type: \"string\" },",
+							"                    zipcode: { type: \"string\" },",
+							"                    geo: {",
+							"                        type: \"object\",",
+							"                        required: [\"lat\", \"lng\"],",
+							"                        properties: {",
+							"                            lat: { type: \"string\" },",
+							"                            lng: { type: \"string\" }",
+							"                        }",
+							"                    }",
+							"                }",
+							"            },",
+							"            phone: { type: \"string\" },",
+							"            website: { type: \"string\" },",
+							"            company: {",
+							"                type: \"object\",",
+							"                required: [\"name\", \"catchPhrase\", \"bs\"],",
+							"                properties: {",
+							"                    name: { type: \"string\" },",
+							"                    catchPhrase: { type: \"string\" },",
+							"                    bs: { type: \"string\" }",
+							"                }",
+							"            }",
+							"        }",
+							"    });",
+							"});",
+							"",
+							"// Test for status code",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Test for response time",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});",
+							"",
+							"// Test for response headers",
+							"pm.test(\"Content-Type is present and has value 'application/json; charset=utf-8'\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\", \"application/json; charset=utf-8\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/users/1"
+			},
+			"response": []
+		}
+	]
+}
