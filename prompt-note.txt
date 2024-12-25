@@ -1,0 +1,33 @@
+===== Step 1 =====
+Create REST API with nodejs and express library
+
+
+Get product detail by id
+
+GET /products/:id
+
+Success
+GET /products/1
+code = 200
+{
+    "id": 1,
+    "product_name": "Product name 1",
+    "price": 100
+}
+
+Product not found
+GET /products/2
+code=404
+{
+    "message": "Product id=2 not found in system"
+}
+
+Error
+GET /products/3
+code=500
+{
+    "message": "Internal server error"
+}
+
+
+=== Step 2 ===
