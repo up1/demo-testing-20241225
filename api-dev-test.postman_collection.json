@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "55b51b23-f749-42e1-8cd3-addff797f78e",
+		"_postman_id": "57773e7f-2b72-4422-a963-3eddf913e6ad",
 		"name": "api-dev-test",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "1453931",
-		"_collection_link": "https://red-firefly-245852.postman.co/workspace/imc-testing~1d374a76-82f3-4853-864a-4221221d859d/collection/1453931-55b51b23-f749-42e1-8cd3-addff797f78e?action=share&source=collection_link&creator=1453931"
+		"_collection_link": "https://red-firefly-245852.postman.co/workspace/imc-testing~1d374a76-82f3-4853-864a-4221221d859d/collection/1453931-57773e7f-2b72-4422-a963-3eddf913e6ad?action=share&source=collection_link&creator=1453931"
 	},
 	"item": [
 		{
@@ -41,6 +41,56 @@
 				"method": "GET",
 				"header": [],
 				"url": "https://515cb192-74ef-4e9e-9bc6-10556fef2ce8.mock.pstmn.io/products/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Product by id with  product not found",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://515cb192-74ef-4e9e-9bc6-10556fef2ce8.mock.pstmn.io/products/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Product by id with error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://515cb192-74ef-4e9e-9bc6-10556fef2ce8.mock.pstmn.io/products/3"
 			},
 			"response": []
 		}
