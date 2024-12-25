@@ -31,3 +31,7 @@ code=500
 
 
 === Step 2 ===
+Refactor code , try to split to app.js
+
+=== Step 3 ===
+Generate test cases with jest and supertest library

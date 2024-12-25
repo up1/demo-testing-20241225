@@ -35,4 +35,8 @@ app.get('/products/:id', (req, res) => {
   }
 })
 
+const xxx = () => {
+  console.log('xxx')
+}
+
 module.exports = app

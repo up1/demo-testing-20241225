@@ -1,5 +1,6 @@
 const request = require('supertest')
 const app = require('../app')
+const validate = require('jsonschema').validate
 
 describe('Products API', () => {
   it('should return product when id exists', async () => {
@@ -7,6 +8,18 @@ describe('Products API', () => {
       .get('/products/1')
     
     expect(res.statusCode).toBe(200)
+    
+    const productSchema = {
+      type: 'object',
+      required: ['id', 'product_name', 'price'],
+      properties: {
+        id: { type: 'number' },
+        product_name: { type: 'string' },
+        price: { type: 'number' }
+      }
+    }
+    const validationResult = validate(res.body, productSchema)
+    expect(validationResult.valid).toBe(true)
     expect(res.body).toEqual({
       id: 1,
       product_name: "Product name 1",
