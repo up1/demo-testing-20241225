@@ -35,7 +35,11 @@ module.exports = defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { 
+        ...devices['Desktop Chrome'],
+        viewport: { width: 600, height: 480 }
+      },
+      
     },
 
     /* Test against mobile viewports. */
