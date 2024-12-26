@@ -1,0 +1,21 @@
+-  request:
+      url: payment/1
+      method: POST
+      headers:
+         content-type: application/json
+      post: >
+          {
+              "order_id": 1,
+              "amount": 100
+          }
+
+   response:
+    - status: 200
+      headers:
+         content-type: application/json
+      body: >
+          {
+              "status": "success",
+              "message": "Payment successful"
+          }
+      
